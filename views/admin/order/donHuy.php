@@ -25,7 +25,7 @@
                 <!-- Page title & breadcrumb -->
                 <div class="cr-page-title cr-page-title-2">
                     <div class="cr-breadcrumb">
-                        <h5 style="text-align:center; font-size: 30px; color:green;">Order List</h5>
+                        <h5 style="text-align:center; font-size: 30px; color:green;">Đơn hàng đã hủy</h5>
                         <ul>
                             <li><a href="index.html">SHOE-SHOP</a></li>
                             <li>Order List</li>
@@ -41,21 +41,18 @@
                                     <form action="" method="post" enctype="multipart/form-data">
                                         <table id="order_list" class="table">
                                             <thead>
-                                                <tr>
+                                            <tr>
                                                     <th>Product</th>
                                                     <th>Price</th>
                                                     <th>Quantity</th>
                                                     <th>Total</th>
                                                     <th>Phương thức</th>
                                                     <th>Startus</th>
-                                              
-
                                                 </tr>
                                             </thead>
-
                                             <tbody>
 
-                                                <?php foreach ($listOrder as $value) : ?>
+                                                <?php foreach ($list as $value) : ?>
                                                     <tr>
                                                         <td class="cr-cart-name">
                                                             <a href="">
@@ -78,21 +75,13 @@
 
 
                                                         <td>
-                                                            <form method="post" action="index.php?admin=change-status">
+                                                            <form method="post" action="index.php?admin=change-status1">
                                                                 <!-- Truyền ID đơn hàng qua input ẩn -->
                                                                 <input type="hidden" name="id" value="<?= $value['id'] ?>">
 
                                                                 <!-- Dropdown chọn trạng thái mới -->
-                                                                <select style="width: 150px; height:35px; border-radius: 5px;" name="id_trangThai" id="status" class="role-select">
-                                                               
-                                                                    <option value='1' <?= $value['id_trangThai'] == 1 ? 'selected' : '' ?>>Chờ xử lý</option>
-                                                                    <option value='2' <?= $value['id_trangThai'] == 2 ? 'selected' : '' ?>>Đã xác nhận</option>
-                                                                    <option value='5' <?= $value['id_trangThai'] == 5 ? 'selected' : '' ?>>Hủy đơn</option>
-                                                                  
-                                                                </select>
-
-                                                                <!-- Nút cập nhật trạng thái -->
-                                                                <button type="submit" class="btn btn-warning">Cập nhập</button>
+                                                                    <option value='5' <?= $value['id_trangThai'] == 5 ? 'selected' : '' ?>>Đơn hàng đã bị hủy</option>
+            
                                                             </form>
                                                         </td>
                                                     </tr>
